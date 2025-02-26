@@ -148,8 +148,8 @@ Now, on your **local computer**, open the BEAUti application by clicking on the 
 
 ### Partitions
 Load your alignment in the `Partitions` panel by pressing the `+` button. This would also be the tab to introduce partitions; however, for this tutorial we will analyse all loci together with the same site, clock and tree models. Choose the correct datatype (Nucleotide).
+![](https://github.com/joyceem/MPEP_tutorials/blob/e698d8b83e053d36a99e2e21da6d704bbe738696/tutorials/images/Pasted%20image%2020250225144108.png)
 
-![[tutorials/images/Pasted image 20250225144108.png]]
 ### Site Model
 We are not implementing tip dates in this exercise, so skip to the `Site Model` panel next. The Site Model refers to the substitution model applied to your molecular data. We will select a Gamma Site Model for this analysis.
     - Gamma Site Models have 4 gamma categories. This allows for among-site variation in the rate sets.
