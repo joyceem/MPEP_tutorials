@@ -173,7 +173,7 @@ Select your tree prior, which sets the patterns of speciation and extinction tha
 
 You can change the distribution of the `BDBirthRate.t` and `BDDeathRate.t` priors, and their limits to reflect a ‘realistic’ number of speciation and extinction events per year, respectively, if you have this type of information for your lineage. We don't have this sort of information readily available for Meliaceae, and so we will keep these priors at their default values.
 
-![][(https://github.com/joyceem/MPEP_tutorials/blob/e698d8b83e053d36a99e2e21da6d704bbe738696/tutorials/images/Pasted%20image%2020250225144108.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/e698d8b83e053d36a99e2e21da6d704bbe738696/tutorials/images/Pasted%20image%2020250225144108.png)
 
 #### Fossil calibrations
 Yesterday, in [Divergence time estimation I](https://github.com/joyceem/MPEP_tutorials/blob/main/tutorials/DivergenceTimeEstimation_FossilCalibrations.md), we assessed some extinct fossil taxa that have been described for Meliaceae, and their suitability for calibrating nodes. We are going to use the following fossils to calibrate our tree:
@@ -192,7 +192,7 @@ We also want to put a maximum age on the stem of Meliaceae, but we don't have a 
 
 After assessing our fossils, we decided which nodes would be best to calibrate, and based on the topology of our ASTRAL and ML species trees, decided to use the fossils as follows:
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151413.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151413.png)
 
 Now that we have reliably identified and dated fossils, and know which nodes we want to calibrate with them, we can enter this information into the `Priors` panel. 
 
