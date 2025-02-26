@@ -202,7 +202,7 @@ To add a prior, click `+ Add Prior` at the bottom of the window.
 
 **Label** the prior with an **informative name without spaces**. Then, **choose the taxa** to be included for this calibration.
 
-![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151413.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/27bac5e2916c7a2f1bc63a5290435ed958836faf/tutorials/images/Pasted%20image%2020250225151655.png)
 
 Only check `monophyletic` if you do not want to allow the model to include any other taxa in that clade.
 
