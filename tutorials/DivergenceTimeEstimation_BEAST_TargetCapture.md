@@ -432,8 +432,10 @@ Open TreeAnnotator
 	- Here you can choose how node heights (divergence ages) are summarised. You can choose to keep the heights that the target tree has (`Keep target heights`), or rescale it to reflect the posterior mean/median node heights for clades.
 - Select a location for the `Output File`, and name it something informative (e.g. `Meli_3loci_UCLN_fixtree_10M1k-COMBINED-MCC.tree`.
 - Check the `Low memory` box.
+
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170659.png)
-Select Run
+
+Select `Run`
 
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170709.png)
 
@@ -442,4 +444,5 @@ Now, we have our final chronogram with divergence ages for all our taxa!
 Open your chronogram in FigTree to see your final, dated tree (or import and plot in R)!
 
 What does it show? Can you see how it has changed from the starting tree?
+
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226171248.png)
