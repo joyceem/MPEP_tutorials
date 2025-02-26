@@ -1,3 +1,4 @@
+# Divergence Time Estimation II
 ## Node dating in BEAST with large datasets
 Elizabeth M. Joyce 
 
@@ -6,6 +7,7 @@ Elizabeth M. Joyce
 3. Build your BEAST runs in BEAUti
 4. Run BEAST
 5. Process BEAST output
+
 ## Introduction
 In this tutorial date our phylogeny of the mahogany family - Meliaceae, using Bayesian inference node dating, implemented in BEAST. Following on from previous days, the supplied data is HybSeq data enriched for the 353 loci of the Angiosperms353 universal bait kit. 
 
@@ -17,8 +19,6 @@ To run this tutorial, you will need to make sure the following programs are down
 - [AMAS](https://github.com/marekborowiec/AMAS)
 - RStudio, with:
 	- ape
-	- phangorn
-	- rBt
 
 It will also be useful to have:
 - the BEAST2 suite, 
