@@ -213,7 +213,7 @@ Next, choose the **prior distribution** from the drop-down menu. This is an extr
 Now click the arrow to the left of the prior to set the hard boundaries of the uniform distribution. We will use a secondary calibration for the root of our tree taken from the stem age of Meliaceae/Rutaceae in one of the analyses of Joyce et al. (2023), and use the same HPD interval as estimated in that analysis for the boundaries (96.28-114.03). 
 Check `use originate` if you would like to calibrate the stem node, rather than the crown node of your selected taxa.
 
-![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151830.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/ebffbce63d392ea1c294c882d867f038b7d06af9/tutorials/images/Pasted%20image%2020250225152040.png)
 
 For all internal **primary** calibrations, the maximum age of will be set to the maximum age of our root secondary calibration (114.03 Ma), and the minimum age will be set to the age of the relevant fossil.
 
