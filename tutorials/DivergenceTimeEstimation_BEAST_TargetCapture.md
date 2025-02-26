@@ -173,7 +173,7 @@ Select your tree prior, which sets the patterns of speciation and extinction tha
 
 You can change the distribution of the `BDBirthRate.t` and `BDDeathRate.t` priors, and their limits to reflect a ‘realistic’ number of speciation and extinction events per year, respectively, if you have this type of information for your lineage. We don't have this sort of information readily available for Meliaceae, and so we will keep these priors at their default values.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/e698d8b83e053d36a99e2e21da6d704bbe738696/tutorials/images/Pasted%20image%2020250225144108.png]]
+![][(https://github.com/joyceem/MPEP_tutorials/blob/e698d8b83e053d36a99e2e21da6d704bbe738696/tutorials/images/Pasted%20image%2020250225144108.png)
 
 #### Fossil calibrations
 Yesterday, in [Divergence time estimation I](https://github.com/joyceem/MPEP_tutorials/blob/main/tutorials/DivergenceTimeEstimation_FossilCalibrations.md), we assessed some extinct fossil taxa that have been described for Meliaceae, and their suitability for calibrating nodes. We are going to use the following fossils to calibrate our tree:
@@ -202,27 +202,27 @@ To add a prior, click `+ Add Prior` at the bottom of the window.
 
 **Label** the prior with an **informative name without spaces**. Then, **choose the taxa** to be included for this calibration.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151413.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151413.png)
 
 Only check `monophyletic` if you do not want to allow the model to include any other taxa in that clade.
 
 Next, choose the **prior distribution** from the drop-down menu. This is an extremely important decision impacting the results of divergence time estimation and should be considered carefully! For this exercise we will use a uniform distribution with hard boundaries for all of our calibrations. 
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151830.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151830.png)
 
 Now click the arrow to the left of the prior to set the hard boundaries of the uniform distribution. We will use a secondary calibration for the root of our tree taken from the stem age of Meliaceae/Rutaceae in one of the analyses of Joyce et al. (2023), and use the same HPD interval as estimated in that analysis for the boundaries (96.28-114.03). 
 Check `use originate` if you would like to calibrate the stem node, rather than the crown node of your selected taxa.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151830.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225151830.png)
 
 For all internal **primary** calibrations, the maximum age of will be set to the maximum age of our root secondary calibration (114.03 Ma), and the minimum age will be set to the age of the relevant fossil.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152722.png]]
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152844.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152722.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152844.png)
 
 Repeat these steps to add P2 and P3.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225153622.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225153622.png)
 
 #### Starting tree
 Now that our priors are added, we will open the Starting tree panel. Select:
@@ -256,7 +256,7 @@ plot(tree, cex=1)
 nodelabels(bg=FALSE, frame="n", cex=1, col="red")  
 ```
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225155936.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225155936.png)
 
 Now that you know the node numbers of your nodes with fossil priors (31, 32, 50, 55), we need to make a table listing the node numbers, and the branch length (/age range) that we want those nodes to be within. This can be very narrow, as it is only the starting tree, and when it is uploaded into BEAST the Bayesian analysis will freely estimate the optimal age within the prior distribution set in BEAUti.
 
@@ -296,7 +296,7 @@ nodelabels(ages,bg="none",frame="none",cex=1,adj=c(1,1),col="tomato",font=2)
 write.tree(tr.dated, file="StartingTree.nwk")
 ```
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225161200.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225161200.png)
 
 Have a look at the starting tree. Are the nodes that we have fossils for within the range of the prior distribution we set?
 
@@ -309,7 +309,7 @@ In the `Starting tree` panel, select `Newick Tree` from the drop-down menu. Chec
 
 Keep other settings on default settings.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225161929.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225161929.png)
 
 #### Operators
 Because we are only using three genes for the purpose of this tutorial, it is unlikely that BEAST will be able to estimate the 'correct' topology. If you look at the gene trees of loci 5913, 6968 and 5333 generated on previous days, you will see that these genes have a different topology compared to the species tree we generated with all 353 loci. So, for this analysis, we will tell BEAST not to estimate topology based on these three genes (which it usually does at the same time as estimating the ages of the divergences); **we will fix the tree to the same topology as our starting tree**. This also has the advantage of speeding up our analysis, as there are less moves to make at each step. This is not appropriate to do in every case, but there can be sound arguments to fix the tree topology in a Bayesian analysis.
@@ -323,7 +323,7 @@ Set the weight of the following operators to 0:
 - Wide Exchange (Wide exchange performs global rearrangement of tree)
 - Wilson Balding (Performs Wilson-Balding global rearrangement of tree)
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225163807.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225163807.png)
 
 Now, the topology of our tree is fixed to our starting tree.
 
@@ -341,13 +341,13 @@ Importantly, change the name of the `tracelog` and `treelog` to something inform
 and
 `Meli_3loci_UCLN_fixtree_10M1k-run1.trees`
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225164355.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225164355.png)
 
 Now we have finished setting up our model in BEAUti! 
 
 Save the model as an `.xml` file with the same name as your `tracelog` and `treelog`, e.g. `Meli_3loci_UCLN_fixtree_10M1k-run1.xml`
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225164607.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225164607.png)
 
 ## Run BEAST
 Now we can run our divergence dating model saved as an `.xml` file in BEAST.
@@ -355,14 +355,14 @@ Now we can run our divergence dating model saved as an `.xml` file in BEAST.
 We always want to run multiple MCMC chains of our model to increase our sample size, check convergence and ensure that we have found the global optimum in our tree space. To do this we can edit our `.xml` files directly to quickly set up multiple `.xml` files that can be run simultaneously.
 - Open your `Meli_3loci_UCLN_fixtree_10M1k-run1.xml` file in a plain text editor.
 - Scroll down to the `tracelog logger` block of the `.xml` file. Change the `fileName` to have a different run name, i.e. `Meli_3loci_UCLN_fixtree_10M1k-run2.log`
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225165235.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225165235.png)
 - Scroll down to the `treelog logger` block of the `.xml` file. Change the `fileName` to match the new `tracelog` `fileName`, i.e. `Meli_3loci_UCLN_fixtree_10M1k-run2.trees`
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225165340.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225165340.png)
 - Now save this .xml file under a new name to match the new names of the `treelog` and `tracelog`
 	- Save as… `Meli_3loci_UCLN_fixtree_10M1k-run2.xml`
 
 Repeat this with subsequent numbers to create additional BEAST runs. For the purposes of this tutorial, we will run 5 runs, but it's not uncommon to need more.
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225165959.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225165959.png)
 
 Having multiple `.xml` files means you can run all `.xml` files at the same time, and the output will be logged with the relevant run name.
 
@@ -377,7 +377,7 @@ cd 21_dating
 ```
 
 You should see something like this if it is running:
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225170348.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225170348.png)
 
 If you were running all runs at the same time, be sure to select a different starting seed number for each run.
 
@@ -390,7 +390,7 @@ We can inspect each file by opening them in a plain text editor, or by exploring
 To view the log files visually, open Tracer and load the log files.
 - File -> Import trace files
 - Select `Meli_3loci_UCLN_fixtree_10M1k-run1`, `2, 3, 4` and  `5.log`
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226163413.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226163413.png)
 Explore the output of each run: Select different runs, and look at the trace file of all of the different statistics. 
 
 What do you see? What happens if you change the burn in, to discard early generations? What happens to the statistics of the combined file when there is no burn-in? Why?
@@ -401,7 +401,7 @@ Have the runs converged?
 
 Examine the `Trace Statistics` panel for the `Combined` run. Note that the ESS is >200 for all statistics. This is typically recommended, but this threshold is also somewhat arbitrary, so your results should be considered on a case-by-case basis.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226164818.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226164818.png)
 
 Now that we have explored the convergence and statistics for our runs, let’s combine our runs into one output in LogCombiner.
 - Open LogCombiner
@@ -410,10 +410,10 @@ Now that we have explored the convergence and statistics for our runs, let’s c
 - Check `Resample states at a lower frequency`. We’ll resample every 10000 states to reduce the size of the combined log file.
 - Select a location for the `Output File`, and name it something informative (e.g. `Meli_3loci_UCLN_starttree_10M1k-COMBINED.log`.
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226165243.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226165243.png)
 
  Select `Run`.
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170659.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170659.png)
 
 Repeat the above to combine the tree files.
 
@@ -431,14 +431,14 @@ Open TreeAnnotator
 	- Here you can choose how node heights (divergence ages) are summarised. You can choose to keep the heights that the target tree has (`Keep target heights`), or rescale it to reflect the posterior mean/median node heights for clades.
 - Select a location for the `Output File`, and name it something informative (e.g. `Meli_3loci_UCLN_fixtree_10M1k-COMBINED-MCC.tree`.
 - Check the `Low memory` box.
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170659.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170659.png)
 Select Run
 
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170709.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170709.png)
 
 Now, we have our final chronogram with divergence ages for all our taxa!
 
 Open your chronogram in FigTree to see your final, dated tree (or import and plot in R)!
 
 What does it show? Can you see how it has changed from the starting tree?
-![[https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226171248.png]]
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226171248.png)
