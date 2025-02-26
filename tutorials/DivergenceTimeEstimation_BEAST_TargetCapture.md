@@ -413,7 +413,8 @@ Now that we have explored the convergence and statistics for our runs, let’s c
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226165243.png)
 
  Select `Run`.
-![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226170659.png)
+ 
+![](https://github.com/joyceem/MPEP_tutorials/blob/027e8259593f7e89385902824cba3173b7d5fd82/tutorials/images/Pasted%20image%2020250226165416.png)
 
 Repeat the above to combine the tree files.
 
