@@ -256,7 +256,7 @@ plot(tree, cex=1)
 nodelabels(bg=FALSE, frame="n", cex=1, col="red")  
 ```
 
-![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225155936.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225160753.png)
 
 Now that you know the node numbers of your nodes with fossil priors (31, 32, 50, 55), we need to make a table listing the node numbers, and the branch length (/age range) that we want those nodes to be within. This can be very narrow, as it is only the starting tree, and when it is uploaded into BEAST the Bayesian analysis will freely estimate the optimal age within the prior distribution set in BEAUti.
 
