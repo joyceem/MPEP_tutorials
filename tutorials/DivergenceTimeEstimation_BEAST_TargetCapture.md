@@ -217,8 +217,8 @@ Check `use originate` if you would like to calibrate the stem node, rather than 
 
 For all internal **primary** calibrations, the maximum age of will be set to the maximum age of our root secondary calibration (114.03 Ma), and the minimum age will be set to the age of the relevant fossil.
 
-![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152722.png)
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152844.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225152722.png)
 
 Repeat these steps to add P2 and P3.
 
