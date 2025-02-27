@@ -44,11 +44,14 @@ In the directory `20_gene_shopping`, I have copied the [MO gene trees you made l
 
 Before we can compare gene trees, we must make sure our gene trees are all rooted in the same way.
 
-Move into the directory where we will reroot our trees.
+No make and move into a directory where we will reroot our trees.
 
 ```bash
+cd 20_gene_shopping
 
-cd 20_gene_shopping/00_rerooted_gene_trees
+mkdir rerooted_gene_trees
+
+cd rerooted_gene_trees
 
 ```
 Now, reroot all of the gene trees we previously estimated. 
@@ -61,7 +64,7 @@ You should see all of your rooted trees in your directory with `ls`. Open a coup
 
 Now, we can start shopping for our 'best' genes for dating using SortaDate.
 
-Move out of the rerooting directory, into the `20_gene_shopping` directory:
+Move out of the rerooting directory, into the main `20_gene_shopping` directory:
 ```bash
 cd ../
 ```
@@ -72,7 +75,7 @@ python ~/apps/SortaDate/src/get_var_length.py -h
 ```
 
 Now we can run the command using the following input:
-```
+```bash
 python ~/apps/SortaDate/src/get_var_length.py 00_rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
 ```
 
@@ -90,7 +93,7 @@ python ~/apps/SortaDate/src/get_bp_genetrees.py -h
 What input do we need?
 
 Now we can run the script with the command:
-```
+```bash
 python ~/apps/SortaDate/src/get_bp_genetrees.py 00_rerooted_gene_trees ../06_astral_MO/meliaceae_334_MO_orthologs.ASTRAL.tre --flend .rr --outf bpsupp
 ```
 Inspect the output:
@@ -125,13 +128,15 @@ head sortadate_3genes_312.txt
 
 It should be loci 5913, 6968, and 5333.
 
-Now that we have shopped for the best loci, we can either treat these as separate loci to put into our dating analysis, or concatenate them. For the purposes of this tutorial, we will concatenate the alignments of loci 5913, 6968 and 5333 into one alignment. This can be achieved with the bash script `make_sortadate_alignment.sh.
+Now that we have shopped for the best loci, we need the aligned sequences for these loci so that they can be used in the dating analysis. I have copied all of the clean MO alignments for each locus that you made last week into the folder `00_gene_alignments`.
+
+For the dating analysis, we can either treat these as separate loci to put into our dating analysis, or concatenate them. For the purposes of this tutorial, we will concatenate the alignments of loci 5913, 6968 and 5333 into one alignment. This can be achieved with the bash script `make_sortadate_alignment.sh`.
 
 For this script, you need to include the output file name of the chosen genes (sortadate_3genes_312), the path for the directory with the cleaned alignments, and the file ending for the clean alignments. The script will read the output file of the `get_good_genes.py` script, find the clean alignments in the alignments directory, concatenate the alignments and provide a summary of the concatenated alignment.
 
 You can run the script as follows:
 ```bash
-bash ../script/make_sortadate_alignment.sh sortadate_3genes_312 ../05_MO_fasta_files ortho.aln.clipkit 
+bash scripts/make_sortadate_alignment.sh sortadate_3genes_312 00_gene_alignments ortho.aln.clipkit 
 ```
 
 Inspect the output of the `make_sortadate_alignment.sh` script. Can you find the folder with the individual gene alignments, and the concatenated alignment?
