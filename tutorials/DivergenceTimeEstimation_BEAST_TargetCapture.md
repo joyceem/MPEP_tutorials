@@ -77,7 +77,7 @@ python scripts/SortaDate/src/get_var_length.py -h
 
 Now we can run the command using the following input:
 ```bash
-python scripts/SortaDate/src/get_var_length.py 00_rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
+python scripts/SortaDate/src/get_var_length.py rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
 ```
 
 and inspect the output:
@@ -95,7 +95,7 @@ What input do we need?
 
 Now we can run the script with the command:
 ```bash
-python scripts/SortaDate/src/get_bp_genetrees.py 00_rerooted_gene_trees ../06_astral_MO/meliaceae_334_MO_orthologs.ASTRAL.tre --flend .rr --outf bpsupp
+python scripts/SortaDate/src/get_bp_genetrees.py rerooted_gene_trees 00_species_tree/meliaceae_334_MO_orthologs.ASTRAL.tre --flend .rr --outf bpsupp
 ```
 Inspect the output:
 ```
