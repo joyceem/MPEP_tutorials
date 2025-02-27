@@ -52,7 +52,7 @@ cd 20_gene_shopping/00_rerooted_gene_trees
 
 ```
 Now, reroot all of the gene trees we previously estimated. 
-To do this, we will reroot using `pxrr`, and we will run this command in a loop so that it reroots all of the gene trees in the `05_MO_fasta_files` directory:
+To do this, we will reroot using `pxrr`, and we will run this command in a loop so that it reroots all of the gene trees in the `00_gene_trees` directory:
 ```bash
 for tree in ../00_gene_trees/*.treefile; do pxrr -t "${tree}" -r -g RUTA_Citrus_hystrix,RUTA_Melicope_ternata,RUTA_Ruta_graveolens -o "$(basename "${tree}" .treefile).rr"; done
 ```
@@ -68,12 +68,12 @@ cd ../
 
 Calculate the root-to-tip variance of all the gene trees using the SortaDate script `get_var_length.py`. We can see what information we need for this by running the command:
 ```bash
-python ~/applications/SortaDate/src/get_var_length.py -h
+python ~/apps/SortaDate/src/get_var_length.py -h
 ```
 
 Now we can run the command using the following input:
 ```
-python ~/applications/SortaDate/src/get_var_length.py 00_rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
+python ~/apps/SortaDate/src/get_var_length.py 00_rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
 ```
 
 and inspect the output:
@@ -85,13 +85,13 @@ Each line represents the statistics for the gene tree, with the first column sho
 
 Now, we can calculate the bipartition support of all gene trees with `get_bp_genetrees.py`:
 ```bash
-python ~/applications/SortaDate/src/get_bp_genetrees.py -h
+python ~/apps/SortaDate/src/get_bp_genetrees.py -h
 ```
 What input do we need?
 
 Now we can run the script with the command:
 ```
-python ~/applications/SortaDate/src/get_bp_genetrees.py 00_rerooted_gene_trees ../06_astral_MO/meliaceae_334_MO_orthologs.ASTRAL.tre --flend .rr --outf bpsupp
+python ~/apps/SortaDate/src/get_bp_genetrees.py 00_rerooted_gene_trees ../06_astral_MO/meliaceae_334_MO_orthologs.ASTRAL.tre --flend .rr --outf bpsupp
 ```
 Inspect the output:
 ```
@@ -102,7 +102,7 @@ What does it show?
 
 Now that we have the root-to-tip variance, tree length and the bipartition support in separate tables (`bpsupp` and `r2tvar`) we need to combine the results together. This can be done with the `combine_results.py` SortaDate script:
 ```bash
-python ~/applications/SortaDate/src/combine_results.py r2tvar bpsupp --outf combined
+python ~/apps/SortaDate/src/combine_results.py r2tvar bpsupp --outf combined
 
 head combined
 ```
@@ -113,9 +113,9 @@ Now that our statistics are all in one place, we can sort and get the list of th
 3. 2 (tree length). 
 
 ```bash
-python ~/applications/SortaDate/src/get_good_genes.py -h
+python ~/apps/SortaDate/src/get_good_genes.py -h
 
-python ~/applications/SortaDate/src/get_good_genes.py --max 3 --order 3,1,2 --outf sortadate_3genes_312.txt combined
+python ~/apps/SortaDate/src/get_good_genes.py --max 3 --order 3,1,2 --outf sortadate_3genes_312.txt combined
 ```
 
 Now look at your results. Which are the best three genes for our dating analysis?
