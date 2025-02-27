@@ -72,12 +72,12 @@ cd ../
 
 Calculate the root-to-tip variance of all the gene trees using the SortaDate script `get_var_length.py`. We can see what information we need for this by running the command:
 ```bash
-python ~/apps/SortaDate/src/get_var_length.py -h
+python scripts/SortaDate/src/get_var_length.py -h
 ```
 
 Now we can run the command using the following input:
 ```bash
-python ~/apps/SortaDate/src/get_var_length.py 00_rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
+python scripts/SortaDate/src/get_var_length.py 00_rerooted_gene_trees --flend .rr --outf r2tvar --outg RUTA_Citrus_hystrix
 ```
 
 and inspect the output:
