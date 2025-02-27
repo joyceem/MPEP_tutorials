@@ -28,11 +28,11 @@ downloaded onto your local machine.
 
 ## Prepare your molecular data for dating
 Although Bayesian methods can simultaneously estimate topology and dates of divergence, this can be too computationally intensive for large, NGS datasets and may result in non-convergence (within your lifetime, anyway). There are a number of options for reducing the computational time of a large dataset with Bayesian Inference divergence dating:
-	1. Reduce the size of the dataset
- 		- reduce no. tips
-		- reduce no. loci ("gene shopping")
-	2. Reduce the complexity of the model
-		- e.g. fix tree topology to a robust, previously estimated topology
+1. Reduce the size of the dataset
+- reduce no. tips
+- reduce no. loci ("gene shopping")
+2. Reduce the complexity of the model
+- e.g. fix tree topology to a robust, previously estimated topology
 	
 In this tutorial, we will conduct an analysis in BEAST with gene shopping to show how this is achieved. Because we are only using a small subset of the data, we will also fix the tree topology to the robust topology estimated in our ASTRAL analysis.
 ### Gene shopping
