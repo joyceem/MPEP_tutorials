@@ -251,11 +251,16 @@ To get your starting tree ready, perform a quick Penalised Likelihood dating pro
 In R, load your packages, set your working directory to your `21_dating folder`, and read your starting tree. For our starting tree, we will use the rooted ASTRAL species tree that you estimated last week. I have copied this tree to the `00_species_tree` folder of your directory.
 
 ```R
+#Install ape if necessary
+#install.packages("ape")
+
+#Load ape
 library(ape)  
 
 #Be sure to enter the correct path here!
 setwd("~/21_dating")
 
+#Read your species tree
 tree <- read.tree("00_species_tree/meliaceae_334_MO_orthologs.ASTRAL.tre.rr")  
 ```
 
