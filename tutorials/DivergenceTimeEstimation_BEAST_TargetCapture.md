@@ -38,18 +38,23 @@ In this tutorial, we will conduct an analysis in BEAST with gene shopping to sho
 ### Gene shopping
 In Bayesian divergence dating methods, the alignment of molecular data is incorporated into the estimation of ages. However, given the computational intensity of Bayesian Inference, it is often not feasible to incorporate hundreds of loci into the analysis. So, the alignment size can be reduced. There are many ways to approach this, but for this exercise, we will use the [SortaDate](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0197433) pipeline.
 
-Before we can work out the "best" genes to use, we must make sure our gene trees are all rooted in the same way, so that we can estimate the tree length, root to tip variance, and bipartition support.
+SortaDate is a pipeline that enables us to shop for the 'best' genes for dating by comparing the tree length, root-to-tip vairance, and bipartition support (i.e. similarity to species tree) of each gene tree.
+
+In the directory `20_gene_shopping`, I have copied the [MO gene trees you made last week](https://github.com/dfmoralesb/MPE_tutorials/blob/main/tutorials/ORTHOLOGY.md#orthology-inference) into the directory `00_gene_trees`.
+
+Before we can compare gene trees, we must make sure our gene trees are all rooted in the same way.
+
+Move into the directory where we will reroot our trees.
 
 ```bash
-mkdir -p 20_gene_shopping/00_rerooted_gene_trees
 
 cd 20_gene_shopping/00_rerooted_gene_trees
 
 ```
-Now, reroot all of the gene trees we previously estimated with IQTREE in `05_MO_fasta_files`. 
+Now, reroot all of the gene trees we previously estimated. 
 To do this, we will reroot using `pxrr`, and we will run this command in a loop so that it reroots all of the gene trees in the `05_MO_fasta_files` directory:
 ```bash
-for tree in ../../05_MO_fasta_files/*.treefile; do pxrr -t "${tree}" -r -g RUTA_Citrus_hystrix,RUTA_Melicope_ternata,RUTA_Ruta_graveolens -o "$(basename "${tree}" .treefile).rr"; done
+for tree in ../00_gene_trees/*.treefile; do pxrr -t "${tree}" -r -g RUTA_Citrus_hystrix,RUTA_Melicope_ternata,RUTA_Ruta_graveolens -o "$(basename "${tree}" .treefile).rr"; done
 ```
 
 You should see all of your rooted trees in your directory with `ls`. Open a couple in FigTree to check that they are all rooted to our outgroups in the same way.
