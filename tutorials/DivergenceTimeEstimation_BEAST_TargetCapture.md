@@ -147,17 +147,16 @@ We now have an alignment with three loci `sortadate_3genes_concat_aln.fasta` to 
 ## Build your BEAST runs in BEAUti
 Now that we have our reduced alignment to inform the analysis, and our fossil calibrations, we are ready to set up our Bayesian Inference divergence dating analysis. We will put all of this information, plus some additional information (about tree priors, etc), into the BEAUti GUI interface. This GUI interface will help us set up an `.xml` file with all the information for our model, and we will eventually execute the settings in the `.xml` file with BEAST.
 
-On the workstation, up one directory and make a new folder for the dating analysis.
+On the workstation, move up one directory and into the folder for the dating analysis.
 
 ```bash
-cd ../
-mkdir 21_dating
+cd ../21_dating
 ```
 
 Now, on your **local computer**, open the BEAUti application by clicking on the icon.
 
 ### Partitions
-Load your alignment in the `Partitions` panel by pressing the `+` button. This would also be the tab to introduce partitions; however, for this tutorial we will analyse all loci together with the same site, clock and tree models. Choose the correct datatype (Nucleotide).
+Download your alignment from the WS, and load it into the `Partitions` panel by pressing the `+` button. This would also be the tab to introduce partitions; however, for this tutorial we will analyse all loci together with the same site, clock and tree models. Choose the correct datatype (Nucleotide).
 
 ![](https://github.com/joyceem/MPEP_tutorials/blob/e698d8b83e053d36a99e2e21da6d704bbe738696/tutorials/images/Pasted%20image%2020250225144108.png)
 
@@ -239,24 +238,25 @@ Repeat these steps to add P2 and P3.
 Now that our priors are added, we will open the Starting tree panel. Select:
 	`View` -> `Show Starting tree panel`
 
-This step is optional, but will allow us to import a tree to use as a starting tree. This will give the tree topology estimation a "head start", as the analysis starts in a topology with a high likelihood and explores the space around this topology rather than wasting time exploring unlikely tree topologies. This will increase the likelihood that the MCMC chains will converge on the globally optimal topology in a reasonable timeframe. 
+This step is optional in dating analyses, but will allow us to import a tree to use as a starting tree. It gives the tree topology estimation a "head start", as the analysis starts in a topology with a high likelihood and explores the space around this topology rather than wasting time exploring unlikely tree topologies. This will increase the likelihood that the MCMC chains will converge on the globally optimal topology in a reasonable timeframe. 
 
 To give our analysis a robust, likely topology to start with, we want to use the topology estimated in our concatenated analysis with *all* 353 loci. In future, be sure that all the tips in the tree are present in the alignment, and *vice versa*! 
 
-However, BEAST will not run when we use uniform distributions on our calibration priors if the node heights of our starting tree aren’t within the range of the fossil prior distributions. This is because of the hard boundaries of a uniform distribution: if our starting tree and priors don’t fit together at the beginning the analysis won’t be able to start.
+Unfortunately, BEAST will not run when we use uniform distributions on our calibration priors if the node heights of our starting tree aren’t within the range of the fossil prior distributions. This is because of the hard boundaries of a uniform distribution: if our starting tree and priors don’t fit together at the beginning the analysis won’t be able to start.
 
 There are multiple ways to fix this. One way is to scale the tree using the `Scale` option of the `Starting tree` panel. Look at the branch lengths of your species tree; if scaling by a factor of 10 or 100 increases the branch lengths to fit within the hard boundaries of your calibrated nodes, then it will work. However, if this does not bring your calibrated nodes within range of your prior distributions, a rough, quick dating procedure with a method like Penalised Likelihood can be used. This will make our starting tree ultrametric and to bring the node heights of calibrated nodes to within the range of the prior distributions we set. 
 
-To get your starting tree ready, perform a quick Penalised Likelihood dating procedure in using the `chronos` function of the `ape` package in R. First, open RStudio.
+To get your starting tree ready, perform a quick Penalised Likelihood dating procedure in using the `chronos` function of the `ape` package in R. First, open [RStudio](http://10.153.134.10:8787) on the workstation.
 
-In R, load your packages, set your working directory to your `21_dating folder`, and read your starting tree.
+In R, load your packages, set your working directory to your `21_dating folder`, and read your starting tree. For our starting tree, we will use the rooted ASTRAL species tree that you estimated last week. I have copied this tree to the `00_species_tree` folder of your directory.
+
 ```R
 library(ape)  
 
 #Be sure to enter the correct path here!
 setwd("~/21_dating")
 
-tree <- read.tree("../06_astral_MO/meliaceae_334_MO_orthologs.ASTRAL.tre.rr")  
+tree <- read.tree("00_species_tree/meliaceae_334_MO_orthologs.ASTRAL.tre.rr")  
 ```
 
 Now, visualise the node numbers on your tree, so that you can ascertain the numbers for the nodes that you need to bring within the range of your uniform distribution.
@@ -309,12 +309,12 @@ write.tree(tr.dated, file="StartingTree.nwk")
 
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250225161200.png)
 
-Have a look at the starting tree. Are the nodes that we have fossils for within the range of the prior distribution we set?
+Have a look at the starting tree in FigTree. Are the nodes that we have fossils for within the range of the prior distribution we set?
 
 Now we have our starting tree, we need to input it into BEAUti. 
 
 Download your tree from the workstation onto your local computer using PuTTY, CyberDuck or command line.
-Now, in a plain text editor, open your starting tree `StartingTree_concat_gene_part.nwk`. Select the tree text (which is in newick format), and copy it. 
+Now, in a plain text editor (not FigTree), open your starting tree `StartingTree.nwk`. Select the tree text (which is in newick format), and copy it. 
 
 In the `Starting tree` panel, select `Newick Tree` from the drop-down menu. Check `Is Labelled Newick`. Then, paste the tree into the `Newick` box.
 
@@ -384,7 +384,7 @@ On the workstation, navigate to the directory where your `.xml` files are, and e
 ```bash
 cd 21_dating
 
-~/applications/beast/bin/beast -seed 93 Meli_3loci_UCLN_fixtree_10M1k-run1.xml
+applications/beast/bin/beast -seed 93 Meli_3loci_UCLN_fixtree_10M1k-run1.xml
 ```
 
 You should see something like this if it is running:
@@ -392,14 +392,20 @@ You should see something like this if it is running:
 
 If you were running all runs at the same time, be sure to select a different starting seed number for each run.
 
+Now, this is going to take a while to run! So, once you can see that it is running, stop your BEAST run for now (`ctrl+x`).
+
+I've already run all of the runs for you, and have placed all of the `.xml` runs and their output into the `01_output_all_runs` folder.
+
 ## Process BEAST output
 
-Download and open the `21_dating` directory. Look at the output from 5 beast runs of our example data. You should see the `.log`, `.trees` and `.state` files from each run.
+Navigate into the `01_output_all_runs` directory. Look at the output from 5 beast runs of our example data. You should see the `.log`, `.trees` and `.state` files from each run.
+
+Now, download the `01_output_all_runs` directory onto your local machine: we want to inspect some of the output in applications with a GUI.
 
 We can inspect each file by opening them in a plain text editor, or by exploring them visually in Tracer. Tracer also allows us to check the statistics of the runs when we combine the runs, so that we can see whether the runs have arrived at a similar tree ("converged"), and whether we have enough generations to give us some statistical power.
 
 To view the log files visually, open Tracer and load the log files.
-- File -> Import trace files
+- `File` -> `Import trace files`
 - Select `Meli_3loci_UCLN_fixtree_10M1k-run1`, `2, 3, 4` and  `5.log`
 ![](https://github.com/joyceem/MPEP_tutorials/blob/1ef2631b89ceb9d3beda58e8a0351749ebc54852/tutorials/images/Pasted%20image%2020250226163413.png)
 Explore the output of each run: Select different runs, and look at the trace file of all of the different statistics. 
