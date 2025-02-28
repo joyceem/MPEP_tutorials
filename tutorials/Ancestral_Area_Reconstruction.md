@@ -1,3 +1,4 @@
+# Ancestral Area Reconstruction
 ## Biogeographic reconstruction with BioGeoBEARs
 Elizabeth M. Joyce 
 
@@ -44,29 +45,73 @@ Open the script `1-BGB_DECvDECJ_TimeStr.R` within R Studio. This script will run
 
 This script implements and compares:
 1. The standard 2-parameter DEC model implemented in the program LAGRANGE (Ree & Smith 2008); 
-2. A DEC+J model implemented in BioGeoBEARS, wherein a third parameter, j, is added, representing the relative per-event weight of founder-event/jump speciation events at cladogenesis events.  The higher j is, the more probability these events have, and the less probability the standard LAGRANGE cladogenesis events have; 
+2. A DEC+J model implemented in BioGeoBEARS, wherein a third parameter, j, is added, representing the relative per-event weight of founder-event/ jump speciation events at cladogenesis events.  The higher j is, the more probability these events have, and the less probability the standard LAGRANGE cladogenesis events have; 
 3. Some standard model-testing (LRT and AIC) is implemented at the end so that users may compare models. 
 
-Run through the script line by line, paying attention to the input working path and file names. 
+We will run through the R script `1-BGB_DECvDECJ_TimeStr.R` together line by line. Be sure to pay attention to the input working path and file names. 
 
 You would also normally want to continue to build and test additional models using DIVA-like (Ronquist 1997) and BAYAREA-like models (Landis, Matzke, Moore, & Huelsenbeck, 2013). However, for this tutorial we will only run and compare the DEC and DEC+J models.
 
-Look at the model-testing output. Which is the best model - DEC or DEC+J?
+At the end of the script, plot the results of the DEC and DEC+J model. 
 
-Look at the PDF outputs. What is the difference in reconstructions between the models?
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228112904.png)
 
-## 3. Extracting statistics from the Ancestral Area Analysis
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228112956.png)
 
-Now we have figures of our ancestral area reconstruction. But if we want to extract exact values and statistics from our analyses, we need to manipulate the model object (e.g. resDECj). An example of how we might extract the marginal probabilities of each state for each node is found in script 2-BGB_GetNodeStats.R.
+What do they show? How do they compare?
 
-## 4. Conduct a Biogeographic Stochastic Mapping analysis
+The advantage of BioGeoBEARs is that it implements many different range evolution models into a likelihood framework, so that we have the option of comparing models to determine the statistically most likely model. 
 
-Next, we will conduct some Biogeographic Stochastic Mapping (BSM) using our preferred biogeographic model (i.e. in this case, DEC+J). BSM can be a great complement to a Bayesian/likelihood Ancestral Area Reconstruction, as it can map biogeographic shifts along branches as well as at nodes. It enables us to estimate metrics like the average number of dispersal events per million years between certain areas.
+Look at the model-testing output. You should see something like this:
+`restable`
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124106.png)
+
+`testtable`
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124303.png)
+
+Which is the statistically best model - DEC or DEC+J?
+
+Remember that statistical tests also have their caveats and should never be a replacement for common sense and using biologically relevant information. So always interpret any statistical outputs of any software package critically. Also remember that to fit these range evolution models into a likelihood framework, some of the models have to be modified, and differ in their implementation in BioGeoBEARs to how they were originally described. As such, for biogeographic questions always consider which range evolution model and software makes the most sense for your group and data.
+
+## Extracting statistics from BioGeoBEARs analyses
+
+Now we have figures of our ancestral area reconstruction. But if we want to extract exact values and statistics from our analyses, we need to manipulate the model object (e.g. `resDECj`). We will extract the marginal probabilities of each state for each node using script `2-BGB_GetNodeStats.R`.
+
+We will run the script `2-BGB_GetNodeStats.R` together, line by line.
+
+Examine the final table `DECj_range_probabilities.txt`. Along the top row, you have the range, and along the left hand column you have the node numbers. Use the node number labels that we plotted on the tree in `BioGeoBEARS_tree_APEnodelabels.pdf` to interpret this table. 
+
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228131249.png)
+
+Extract of `DECj_range_probabilities.txt` table, viewed in Excel:
+
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228131444.png)
+
+What is the probability of each range at each node?
+
+## Conduct a Biogeographic Stochastic Mapping analysis
+
+Next, we will conduct some Biogeographic Stochastic Mapping (BSM) using our preferred biogeographic model (i.e. in this case, DEC+J). BSM can be a great complement to a Bayesian/likelihood Ancestral Area Reconstruction, as it can map biogeographic shifts along branches as well as at nodes. Stochastic mapping simulations are simulations conditional on the observed tree and a given model, and the model parameters. If you average many stochastic mapping simulations, you should get the same probabilities of each state that are produced in ancestral states estimation. However, the individual stochastic maps constitute possible histories, and it can be useful to count stochastically mapped events, their dates, etc. For example, it enables us to estimate metrics like the average number of dispersal events per million years between certain areas.
+
+More information about BSM can be found here:
+1. Dupin, Julia; Matzke, Nicholas J.; Sarkinen, Tiina; Knapp, Sandra; Olmstead, Richard; Bohs, Lynn; Smith, Stacey (2016).  
+[Bayesian estimation of the global biogeographic history of the Solanaceae](http://dx.doi.org/10.1111/jbi.12898). _Journal of Biogeography_, 44(4), 887-899. 
+1. Matzke, Nicholas J. (2016). Stochastic mapping under biogeographical models. PhyloWiki BioGeoBEARS website, 2016,  
+[http://phylo.wikidot.com/biogeobears#stochastic_mapping](http://phylo.wikidot.com/biogeobears#stochastic_mapping).
 
 Open the R script 3-BGB_BSM.R in R. Execute the script line by line, paying attention to the names of the input files and working paths. This script builds the BSM, runs 100 iterations, and then summarises the 100 iterations, producing a table and histograms with information about the number of anagenetic dispersal, sympatric, vicariance and founder events over time.
 
-By manipulating the BSM tables, you can also summarise biogeographic events between areas over time. For example, the average number of dispersal events between Sunda, Sahul and Wallace over time:
+Open the first stochastic map, `DECjTimStr_single_stochastic_map_n1.pdf`. 
+
+[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228182437.png)
+
+What does this show?
+
+Explore the summary tables. What does `sumamry_counts_BSMs` show? What does `all_dispersals_counts_fromto_means.txt` show?
+
+By manipulating the BSM output files such as `ana_events_table` further, you can also summarise biogeographic events between areas over time. We won't do this for this tutorial. but as an example, this is the average number of dispersal events between Sunda, Sahul and Wallace over time:
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdjLibLfKDHWqGQVbnQpxoj6JePMwHxAqR9f8liAVKY9H2qAVgQWoordFmGfVzf75t2wyfPIHTd-MvI7uHUtdg4M_7GS5PIiO_QN87Qi3aXd9n3A0jk43dXwqMc4v0_86pV7tAlj3hcHqwW_AWUkJczR_I?key=Nqw43J4UWJ1wNgJRDTzDDg)
+
 
 For more details about BSM, refer to the BioGeoBEARS wiki page: [http://phylo.wikidot.com/biogeobears#stochastic_mapping](http://phylo.wikidot.com/biogeobears#stochastic_mapping)
