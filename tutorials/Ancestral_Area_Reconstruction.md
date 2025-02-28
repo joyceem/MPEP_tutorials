@@ -63,10 +63,13 @@ What do they show? How do they compare?
 The advantage of BioGeoBEARs is that it implements many different range evolution models into a likelihood framework, so that we have the option of comparing models to determine the statistically most likely model. 
 
 Look at the model-testing output. You should see something like this:
+
 `restable`
+
 ![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124106.png)
 
 `testtable`
+
 ![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124303.png)
 
 Which is the statistically best model - DEC or DEC+J?
