@@ -54,9 +54,9 @@ You would also normally want to continue to build and test additional models usi
 
 At the end of the script, plot the results of the DEC and DEC+J model. 
 
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228112904.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228112904.png)
 
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228112956.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228112956.png)
 
 What do they show? How do they compare?
 
@@ -64,10 +64,10 @@ The advantage of BioGeoBEARs is that it implements many different range evolutio
 
 Look at the model-testing output. You should see something like this:
 `restable`
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124106.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124106.png)
 
 `testtable`
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124303.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124303.png)
 
 Which is the statistically best model - DEC or DEC+J?
 
@@ -81,11 +81,11 @@ We will run the script `2-BGB_GetNodeStats.R` together, line by line.
 
 Examine the final table `DECj_range_probabilities.txt`. Along the top row, you have the range, and along the left hand column you have the node numbers. Use the node number labels that we plotted on the tree in `BioGeoBEARS_tree_APEnodelabels.pdf` to interpret this table. 
 
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228131249.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228131249.png)
 
 Extract of `DECj_range_probabilities.txt` table, viewed in Excel:
 
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228131444.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228131444.png)
 
 What is the probability of each range at each node?
 
@@ -103,7 +103,7 @@ Open the R script 3-BGB_BSM.R in R. Execute the script line by line, paying atte
 
 Open the first stochastic map, `DECjTimStr_single_stochastic_map_n1.pdf`. 
 
-[](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228182437.png)
+![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228182437.png)
 
 What does this show?
 
