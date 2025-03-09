@@ -18,8 +18,8 @@ Did winged seeds evolve once or multiple times? What was the ancestral state of 
 To conduct an ASR, we first need to gather all the information about what we know about seed states in the family. A simple way to do this is by scoring the states of the seed trait for all extant lineages we have in our phylogeny (our tips).
 
 Seeing as there are two potential states, this is a **binary trait**. We will code states of our tips using the following system:
-	0=unwinged
-	1= winged
+	- 0=unwinged
+	- 1= winged
 	
 Download the `meli_traits_template.xlsx` and use the last generic monograph of the family by Pennington and Styles (1975) to score the states for each of the tips.
 ### Sexual systems in Meliaceae
@@ -31,10 +31,10 @@ Modified from https://commons.wikimedia.org/wiki/File:Monoecy_dioecy_en.svg.
 How did these different sexual systems evolve?
 
 Seeing as there are four potential states, this is a **multistate trait**. We will code states of our tips using the following system:
-	0=unisexual flowers in the same individual (monoecious plants)
-	1=unisexual flowers in distinct individuals (dioecious plants)
-	2=unisexual and bisexual flowers (polygamous plants)
-	3=only bisexual flowers (hermaphroditic plants)
+	- 0=unisexual flowers in the same individual (monoecious plants)
+	- 1=unisexual flowers in distinct individuals (dioecious plants)
+	- 2=unisexual and bisexual flowers (polygamous plants)
+	- 3=only bisexual flowers (hermaphroditic plants)
 	
 Download the `meli_traits_template.xlsx` and use the paper: Laino Gama R, Muellner-Riehl AN, Demarco D, Pirani JR (2021) Evolution of reproductive traits in the mahagony family (Meliaceae). _Journal of Systematics and Evolution_ **59**(1), 21–43. [https://doi.org/10.1111/jse.12572](https://doi.org/10.1111/jse.12572) to score the states for each of the tips.
 
