@@ -236,8 +236,9 @@ We can see that even though we have allowed for the rate categories to differ ac
 Now, we are going to use a state-dependent diversification model to model trait evolution. SSE models are powerful approaches for testing the association of a character with diversification rate heterogeneity. You can implement these SSE models in a number of ways (such as RevBayes). We are going to implement a BiSSE model in R using the R package `diversitree`. For more information about the package see the manual: https://cran.r-project.org/web/packages/diversitree/diversitree.pdf.
 
 The Binary State-dependent Speciation and Extinction model is used when we hypothesise that diversification rates could be dependent on a binary trait. For example, we might hypothesise that winged seeds are associated with greater diversification than unwinged seeds. The BiSSE model has six parameters: 
-	- q01 and q10, which describe the rate at which the binary character transitions from one state to another, and 
-	- λ0, μ0, λ1, and μ1 which describe the diversification dynamics while a lineage is in state 0 and 1, respectively. 
+ - q01 and q10, which describe the rate at which the binary character transitions from one state to another, and
+ - λ0, μ0, λ1, and μ1 which describe the diversification dynamics while a lineage is in state 0 and 1, respectively.
+
 Given a phylogeny and character values, we can estimate these parameters in R.
 
 ![BiSSE](https://github.com/user-attachments/assets/f868b475-5700-4185-b851-40b13a2529ac)
@@ -328,6 +329,7 @@ The observed characters are denoted with either a 0 or a 1 while the hidden char
 Next we need to specify which diversification rates are shared between states. Unlike `diversitree`, `hisse` has uses a different parameterization for diversification. Instead of speciation and extinction, `hisse` uses net turnover and the extinction fraction. These are just transformations of speciation and extinction, and in effect can be interpreted as speciation and extinction rates. Specifically they are:
 - net turnover=λ+μ
 - extinction fraction=μ/λ
+
 The states are ordered 0A, 1A, 0B, 1B, so we will specify that the diversification rates are different between 0 and 1, and can differ between A and B - i.e. that all states 0A and 1A are different.
 
 ```
