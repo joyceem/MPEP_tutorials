@@ -9,7 +9,7 @@ As discussed during the lecture, there are many different ways to model the evol
 ### Seed type in Meliaceae
 There are two major seed types in Meliaceae: **winged seeds**, whereby the testa is thin and dry and forms a wing at one end or the whole way around the seed; and seeds without wings (herein referred to as '**unwinged seeds**') whereby the testa is unwinged and either forms a sarcotesta or is covered with an aril.
 
-![[[Pasted image 20250309105859.png](https://github.com/joyceem/MPEP_tutorials/blob/33c6785e67250bf621668255f5ad11c4eb4569af/tutorials/images/Pasted%20image%2020250309105859.png)]]
+![[https://github.com/joyceem/MPEP_tutorials/blob/33c6785e67250bf621668255f5ad11c4eb4569af/tutorials/images/Pasted%20image%2020250309105859.png)]]
 A) An example of **winged seeds** in *Toona sinensis* (image: [Roger Culos](https://de.wikipedia.org/wiki/Toona_sinensis#/media/Datei:Toona_sinensis_MHNT.BOT.2010.12.11.jpg)); B) An example of **unwinged seeds** in *Aglaia meridionalis* (image: Elizabeth Joyce), whereby the testa is covered by a bright orange aril.
 
 Did winged seeds evolve once or multiple times? What was the ancestral state of the family? Did winged seeds evolve from unwinged seeds, or vice versa? How frequently do transitions between these states occur? Is it more frequent for winged seeds to evolve into unwinged seeds? Is one state linked to more diversification than the other? These are the sorts of questions that we can tackle with different types of ASR models.
