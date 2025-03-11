@@ -87,6 +87,16 @@ head r2tvar
 ```
 Each line represents the statistics for the gene tree, with the first column showing the root-to-tip variance, and the second column showing the tree length.
 
+**Root-to-tip Variance** measures the variability in distances from the root to each tip. It assesses rate heterogeneity and molecular clock deviations of the tree (/gene).
+Interpretation:
+ - Low variance → Clock-like evolution (uniform rates across lineages).
+ - High variance → Rate heterogeneity (some lineages evolve faster/slower).
+
+**Tree length** measures the sum of all branch lengths in the tree. It represents the total amount of evolutionary change in the tree (/gene).
+Interpretation:
+ - Long tree length → High evolutionary divergence.
+ - Short tree length → Low evolutionary divergence.
+
 Now, we can calculate the bipartition support of all gene trees with `get_bp_genetrees.py`:
 ```bash
 python scripts/SortaDate/src/get_bp_genetrees.py -h
@@ -97,6 +107,9 @@ Now we can run the script with the command:
 ```bash
 python scripts/SortaDate/src/get_bp_genetrees.py rerooted_gene_trees 00_species_tree/meliaceae_334_MO_orthologs.ASTRAL.tre --flend .rr --outf bpsupp
 ```
+
+**Bipartition support** is a measure of how the topology of the similarity in the topology of each gene tree to the topology of your species tree.
+
 Inspect the output:
 ```
 ls
