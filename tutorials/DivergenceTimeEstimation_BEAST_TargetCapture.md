@@ -145,7 +145,8 @@ Inspect the output of the `make_sortadate_alignment.sh` script. Can you find the
 We now have an alignment with three loci `sortadate_3genes_concat_aln.fasta` to proceed with for our dating analysis.
 
 ## Build your BEAST runs in BEAUti
-Now that we have our reduced alignment to inform the analysis, and our fossil calibrations, we are ready to set up our Bayesian Inference divergence dating analysis. We will put all of this information, plus some additional information (about tree priors, etc), into the BEAUti GUI interface. This GUI interface will help us set up an `.xml` file with all the information for our model, and we will eventually execute the settings in the `.xml` file with BEAST.
+Now that we have our reduced alignment to inform the analysis, and our fossil calibrations, we are ready to set up our Bayesian Inference divergence dating analysis. There are multiple programs to do this, but for this tutorial we will use BEAST2. For more information on BEAST2, check out the tutorials and manuals [online](http://www.beast2.org/tutorials/). 
+Before we can run our model in BEAST, we first need to set up the model in BEAUTi. BEAUTi runs in a GUI interface where we can set up an `.xml` file with all the information for our model, and we will eventually execute the settings in the `.xml` file with BEAST.
 
 On the workstation, move up one directory and into the folder for the dating analysis.
 
