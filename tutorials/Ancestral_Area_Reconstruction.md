@@ -83,6 +83,10 @@ Look at the model-testing output. You should see something like this:
 
 ![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124106.png)
 
+What do these statistics show? Use the below figure from the [BioGEOBEARS wiki page](http://phylo.wikidot.com/biogeobears) as a hint:
+http://phylo.wdfiles.com/local--files/biogeobears/BioGeoBEARS_supermodel.png![image](https://github.com/user-attachments/assets/697cc761-b0a5-4df1-ac7b-7c62c7773da9)
+
+
 `testtable`
 
 ![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124303.png)
