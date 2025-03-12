@@ -48,7 +48,22 @@ This script implements and compares:
 2. A DEC+J model implemented in BioGeoBEARS, wherein a third parameter, j, is added, representing the relative per-event weight of founder-event/ jump speciation events at cladogenesis events.  The higher j is, the more probability these events have, and the less probability the standard LAGRANGE cladogenesis events have; 
 3. Some standard model-testing (LRT and AIC) is implemented at the end so that users may compare models. 
 
-We will run through the R script `1-BGB_DECvDECJ_TimeStr.R` together line by line. Be sure to pay attention to the input working path and file names. 
+We will run through the R script `1-BGB_DECvDECJ_TimeStr.R` together line by line. Be sure to pay attention to the input working path and file names.
+
+After you get the DEC model running, you can stop it (it will take longer than we have in the practical to run!). You can load the results of the analysis I have run with this data by entering the following:
+
+```
+load("/data_tmp/mpemaster/data/22_ancestral_area_reconstruction/Rdata/MELI_FinalTree_DEC_TimStr.Rdata")
+
+resDEC <- res
+```
+Now you should have all the parameters you need to build the DEC+J model. Build the DEC+J model following the script. Once you get the DEC+J model running, you can again stop it, and load the results of my previous run:
+
+```
+load("/data_tmp/mpemaster/data/22_ancestral_area_reconstruction/Rdata/MELI_FinalTree_DEC+J_TimStr.Rdata")
+
+resDECj <- res
+```
 
 You would also normally want to continue to build and test additional models using DIVA-like (Ronquist 1997) and BAYAREA-like models (Landis, Matzke, Moore, & Huelsenbeck, 2013). However, for this tutorial we will only run and compare the DEC and DEC+J models.
 
