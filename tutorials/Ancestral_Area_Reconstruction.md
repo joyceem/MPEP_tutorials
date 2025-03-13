@@ -80,8 +80,12 @@ The advantage of BioGeoBEARs is that it implements many different range evolutio
 Look at the model-testing output. You should see something like this:
 
 `restable`
+```
+	LnL		numparams	d		e		j
+DEC	-110.1467574	2		0.01		0.01		0
+DEC+J	-100.9219159	3		0.004823255	1.00E-12	0.195466823
 
-![](https://github.com/joyceem/MPEP_tutorials/blob/584cb5e001b7e29641fa1b8cd7282336a29f0222/tutorials/images/Pasted%20image%2020250228124106.png)
+```
 
 What do these statistics show? Use the below figure from the [BioGEOBEARS wiki page](http://phylo.wikidot.com/biogeobears) as a hint:
 ![image](http://phylo.wdfiles.com/local--files/biogeobears/BioGeoBEARS_supermodel.png)
