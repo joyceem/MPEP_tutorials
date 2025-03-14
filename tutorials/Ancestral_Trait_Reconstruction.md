@@ -176,8 +176,8 @@ When you plot your results, you should see something like this for the ER...
 
 Explore the output. Which is the best model? What are the most likely ancestral states for Melioideae, Cedreloideae and Meliaceae?
 
-### Evolution of discrete characters with rate changes ("Hidden Markov Models")
-One potential problem with traditional Mk models such as the ones we just ran is that they assume that transition rates are fixed across the whole tree. One way we can allow for rates to change across the tree is by modelling states that allow for different rate categories across the tree. Let's go back to our seed data to try this.
+### Evolution of discrete characters with rate changes
+One potential problem with traditional Mk models such as the ones we just ran is that they assume that transition rates are fixed across the whole tree. One way we can allow for rates to change across the tree is by modelling states that allow for different rate categories across the tree. One optoin for this is by applying what's called a "Hidden Markov Model", whereby we add an extra "hidden" state that represent different rate categories. Note that this is different from Hidden SSE models, which we will move on to later, as we are not modelling anything about speciation or extinction rates. Let's go back to our seed data to try this.
 
 First, let's rerun an ER model with one rate category:
 ```
